@@ -1,6 +1,6 @@
 import { defineConfig } from "sanity";
-
 import { structureTool } from "sanity/structure";
+import schemas from "./sanity/schemas";
 
 const config = defineConfig({
   projectId: "nkuwkr79",
@@ -14,6 +14,8 @@ const config = defineConfig({
   basePath: "/admin",
 
   plugins: [structureTool()],
+
+  schema: { types: schemas },
 });
 
 export default config;
