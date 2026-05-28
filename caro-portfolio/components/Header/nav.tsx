@@ -11,13 +11,17 @@ export default async function Nav() {
           <li>
             <Link href={"/"}>00 ___ info</Link>
           </li>
-          {collections.map((collection) => (
+          {collections.map((collection, index) => (
             <li key={collection._id}>
-              <Link href={`/${collection.slug}`}>01 ___ {collection.name}</Link>
+              <Link href={`/${collection.slug}`}>
+                {String(index + 2).padStart(2, "0")}___ {collection.name}
+              </Link>
             </li>
           ))}
           <li>
-            <Link href={"/contact"}>03 ___ contact</Link>
+            <Link href={"/contact"}>
+              {String(collections.length + 2).padStart(2, "0")} ___ contact
+            </Link>
           </li>
         </ul>
       </nav>

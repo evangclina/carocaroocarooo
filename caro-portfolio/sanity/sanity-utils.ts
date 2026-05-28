@@ -69,7 +69,13 @@ export async function getCollectionBySlug(slug: string): Promise<Collection> {
       "slug": slug.current,
       "image": image.asset->url,
       description,
-      pieces
+      pieces[]{
+        name, 
+        slug, 
+        "image": image.asset->url,  
+        status, 
+        description
+      }
     }`,
     { slug },
   );
