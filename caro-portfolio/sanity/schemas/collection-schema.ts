@@ -15,6 +15,10 @@ const collection = {
       name: "slug",
       title: "slug",
       type: "slug",
+      options: {
+        source: "name",
+        maxLength: 96,
+      },
     },
     {
       name: "description",
@@ -48,6 +52,10 @@ const collection = {
               name: "slug",
               title: "Slug",
               type: "string",
+              options: {
+                source: "name",
+                maxLength: 96,
+              },
             },
             {
               name: "image",
