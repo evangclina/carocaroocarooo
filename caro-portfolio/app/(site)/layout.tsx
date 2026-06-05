@@ -1,6 +1,6 @@
 import Nav from "@/components/Header/nav";
 import { Metadata } from "next";
-import "./global.css";
+import "../global.css";
 
 export const metadata: Metadata = {
   title: "carocaroocarooo",
@@ -14,9 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#F1EEE6]">
-        <Nav />
-        <main>{children}</main>
+      <body className="bg-[#F1EEE6] flex">
+        <header className="h-screen fixed top-0 left-0">
+          <Nav />
+        </header>
+        <main className="md:ml-40">{children}</main>
       </body>
     </html>
   );
