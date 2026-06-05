@@ -15,18 +15,36 @@ export default async function CollectionPage({
   }
 
   return (
-    <div className="mx-3">
-      <h1>{collection.name}</h1>
+    <div className="mx-7.5 mt-1.5">
+      <h1 className="font-arial text-2xl flex justify-center">
+        {collection.name}
+      </h1>
       {collection.pieces.map((piece) => (
-        <div key={piece.slug}>
-          <h2>{piece.name}</h2>
-          <Image
-            src={piece.image.url}
-            width={piece.image.width}
-            height={piece.image.height}
-            alt={piece.name}
-          />
-          <div>{piece.description}</div>
+        <div key={piece.slug} className="mb-10">
+          <div>
+            <h2 className="text-sm">{piece.name}</h2>
+          </div>
+          <div className="md:flex">
+            <div className="w-full">
+              <Image
+                src={piece.image.url}
+                width={piece.image.width}
+                height={piece.image.height}
+                alt={piece.name}
+                className="w-full object-cover h-auto"
+              />
+            </div>
+            <div className="grid grid-row-2 items-center w-full ml-5">
+              <div className="mt-2 md:mt-0 text-justify text-md">
+                {piece.description}
+              </div>
+              <button
+                className={`${piece.status === "available" ? "" : "disabled:opacity-50 hover:block"} border  w-25 h-15 cursor-pointer justify-self-end `}
+              >
+                {piece.status === "available" ? "Inquire" : "Sold"}
+              </button>
+            </div>
+          </div>
         </div>
       ))}
     </div>

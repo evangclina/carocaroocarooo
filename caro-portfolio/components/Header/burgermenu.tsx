@@ -19,10 +19,6 @@ export default function BurgerMenu({
         className="fixed top-0 left-0 z-50 md:hidden size-8"
       />
 
-      {/* Overlay */}
-      {/* {isOpen && <div className="fixed inset-0 bg-black/50 z-40 md:hidden" />} */}
-      {/* {isOpen && <X className="fixed " onClick={() => setIsOpen(false)} />} */}
-
       {/* Mobile Open Menu */}
       <div
         className={`fixed top-0 h-screen w-screen max-w-192.5 bg-white z-50 transition-transform duration-300 md:hidden ${isOpen ? "translate-y-0" : "translate-y-full"}`}
