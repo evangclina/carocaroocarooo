@@ -1,6 +1,13 @@
 import Nav from "@/components/Header/nav";
 import { Metadata } from "next";
+import { Roboto } from "next/font/google";
 import "../global.css";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-roboto",
+});
 
 export const metadata: Metadata = {
   title: "carocaroocarooo",
@@ -14,11 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#F1EEE6] flex">
+      <body className={`${roboto.variable} bg-[#F1EEE6]`}>
         <header className="h-screen fixed top-0 left-0">
           <Nav />
         </header>
-        <main className="md:ml-45">{children}</main>
+        <main className="md:ml-45 font-roboto">{children}</main>
       </body>
     </html>
   );
