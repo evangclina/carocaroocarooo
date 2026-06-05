@@ -8,7 +8,7 @@ type NavLinkProps = {
 
 export default function NavLinks({ collections, onLinkClick }: NavLinkProps) {
   return (
-    <ul className="flex-col space-y-5">
+    <ul className="flex-col space-y-5 md:space-y-3">
       <li>
         <Link href={"/"} onClick={onLinkClick}>
           00 ___ info

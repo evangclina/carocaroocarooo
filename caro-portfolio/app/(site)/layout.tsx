@@ -18,7 +18,7 @@ export default function RootLayout({
         <header className="h-screen fixed top-0 left-0">
           <Nav />
         </header>
-        <main className="md:ml-40">{children}</main>
+        <main className="md:ml-45">{children}</main>
       </body>
     </html>
   );
