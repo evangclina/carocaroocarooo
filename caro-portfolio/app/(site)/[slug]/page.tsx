@@ -15,20 +15,18 @@ export default async function CollectionPage({
   }
 
   return (
-    <div className="mx-2.5">
-      <h2>{collection.name}</h2>
+    <div className="mx-3">
+      <h1>{collection.name}</h1>
       {collection.pieces.map((piece) => (
         <div key={piece.slug}>
           <h2>{piece.name}</h2>
+          <Image
+            src={piece.image.url}
+            width={piece.image.width}
+            height={piece.image.height}
+            alt={piece.name}
+          />
           <div>{piece.description}</div>
-          <div className="object-cover">
-            <Image
-              src={piece.image}
-              width={250}
-              height={100}
-              alt={piece.name}
-            />
-          </div>
         </div>
       ))}
     </div>
