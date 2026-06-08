@@ -9,11 +9,8 @@ import { ImageType } from "@/types/ImageType";
 import Image from "next/image";
 
 export default function PhotoCarousel({ images }: { images: ImageType[] }) {
-  // const coverImage = images[0];
-  console.log(images);
-
   return (
-    <Carousel className="w-full max-w-[12rem] sm:max-w-xs">
+    <Carousel className="w-full max-w-48 sm:max-w-xs" opts={{ loop: true }}>
       <CarouselContent>
         {images.map((image, index) => (
           <CarouselItem key={index}>
@@ -25,20 +22,11 @@ export default function PhotoCarousel({ images }: { images: ImageType[] }) {
             />
           </CarouselItem>
         ))}
-        {/* {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))} */}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <div className="flex items-center justify-center gap-2.5 pt-4">
+        <CarouselPrevious className="static hover:bg-[#CDC6B0]" />
+        <CarouselNext className="static hover:bg-[#CDC6B0]" />
+      </div>
     </Carousel>
   );
 }
