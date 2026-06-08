@@ -21,19 +21,6 @@ const collection = {
       },
     },
     {
-      name: "description",
-      title: "Collection description",
-      type: "text",
-    },
-    {
-      name: "image",
-      title: "Collection Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
-    {
       name: "pieces",
       title: "Pieces",
       type: "array",
@@ -58,13 +45,26 @@ const collection = {
               },
             },
             {
-              name: "image",
-              title: "Piece image",
+              name: "coverImage",
+              title: "coverImage",
               type: "image",
-
               options: {
-                hotspot: true,
+                hotspot: "true",
               },
+            },
+            {
+              name: "images",
+              title: "Piece images",
+              type: "array",
+
+              of: [
+                {
+                  type: "image",
+                  options: {
+                    hotspot: "true",
+                  },
+                },
+              ],
             },
             {
               name: "status",
@@ -91,6 +91,29 @@ const collection = {
               name: "description",
               title: "Piece description",
               type: "text",
+            },
+            {
+              name: "material",
+              title: "Material",
+              type: "string",
+            },
+            {
+              name: "dimensions",
+              title: "Dimensions",
+              type: "object",
+
+              fields: [
+                {
+                  name: "width",
+                  title: "Width",
+                  type: "number",
+                },
+                {
+                  name: "height",
+                  title: "Height",
+                  type: "number",
+                },
+              ],
             },
           ],
         },

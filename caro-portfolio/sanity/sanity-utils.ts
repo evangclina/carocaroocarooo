@@ -15,13 +15,7 @@ export async function getCollections(): Promise<Collection[]> {
       _id, 
       _createdAt,
       name, 
-      "slug": slug.current, 
-      "image": {
-        "url": image.asset->url, 
-        "width": image.asset->metadata.dimensions.width, 
-        "height": image.asset->metadata.dimensions.height
-      }, 
-      description, 
+      "slug": slug.current,
       pieces
     }`,
   );
@@ -47,15 +41,25 @@ export async function getCollectionBySlug(slug: string): Promise<Collection> {
       "image": image.asset->url,
       description,
       pieces[]{
+        _id, 
+        _createdAt,
         name, 
         slug, 
-        "image": {
+        "coverImage": {
           "url": image.asset->url, 
           "width": image.asset->metadata.dimensions.width, 
           "height": image.asset->metadata.dimensions.height
-        },  
+        },
+        images[]{
+          _id, 
+          "url": image.asset->url, 
+          "width": image.asset->metadata.dimensions.width, 
+          "height": image.asset->metadata.dimensions.height
+        },
         status, 
-        description
+        description, 
+        material, 
+        dimensions
       }
     }`,
     { slug },
