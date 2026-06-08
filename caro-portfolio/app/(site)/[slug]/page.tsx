@@ -27,9 +27,9 @@ export default async function CollectionPage({
           <div className="md:flex">
             <div className="w-full">
               <Image
-                src={piece.image.url}
-                width={piece.image.width}
-                height={piece.image.height}
+                src={piece.coverImage.url}
+                width={piece.coverImage.width}
+                height={piece.coverImage.height}
                 alt={piece.name}
                 className="w-full object-cover h-auto"
               />

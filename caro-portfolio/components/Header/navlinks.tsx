@@ -8,9 +8,13 @@ type NavLinkProps = {
 
 export default function NavLinks({ collections, onLinkClick }: NavLinkProps) {
   return (
-    <ul className="flex-col space-y-5 md:space-y-3 md:text-sm">
+    <ul className="flex-col space-y-5 md:space-y-3 font-roboto-mono">
+      <li className="font-arial font-bold flex-col space-y-2.5">
+        <h2>⋆⊱༻𖥸༺⊰⋆</h2>
+        <Link href={"/"}>carocaroocarooo</Link>
+      </li>
       <li>
-        <Link href={"/"} onClick={onLinkClick}>
+        <Link href={"/info"} onClick={onLinkClick}>
           00 ___ info
         </Link>
       </li>
