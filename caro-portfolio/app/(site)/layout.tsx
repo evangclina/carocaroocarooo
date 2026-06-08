@@ -27,7 +27,7 @@ export default function RootLayout({
           <Nav />
         </header>
         <main className="md:ml-55">
-          <div className="mx-10 mt-10 md:mt-19">{children}</div>
+          <div className="mx-10 mt-20 md:mt-19">{children}</div>
         </main>
       </body>
     </html>
