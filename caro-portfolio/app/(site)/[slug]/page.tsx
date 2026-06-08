@@ -36,7 +36,7 @@ export default async function CollectionPage({
 
             {/* Piece content */}
             <div className="md:ml-5 flex flex-col md:items-start md:justify-between md:max-w-md w-full">
-              <div className="font-roboto-mono self-start">
+              <div className="self-start">
                 <h2 className="mb-5 font-bold text-15">{piece.name}</h2>
                 <p className="mb-15 text-11">{piece.description}</p>
                 <h3 className="text-13">material</h3>
@@ -47,7 +47,7 @@ export default async function CollectionPage({
                 </h4>
               </div>
 
-              <div className="self-end md:self-auto font-roboto-mono">
+              <div className="self-end md:self-auto">
                 <button
                   className={`${piece.status === "available" ? "cursor-pointer" : "disabled:opacity-50"}  bg-[#CDC6B0] md:mb-[22.5px] text-11 inline-grid grid-cols-1 grid-rows-1 place-items-center py-2.5 px-5 mb-10`}
                 >

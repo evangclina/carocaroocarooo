@@ -12,7 +12,7 @@ export default function NavLinks({ collections, onLinkClick }: NavLinkProps) {
   const pathname = usePathname();
 
   return (
-    <ul className="flex-col space-y-5 md:space-y-3 font-roboto-mono md:text-13">
+    <ul className="flex-col space-y-5 md:space-y-3 md:text-13">
       <li className="font-arial font-bold flex-col space-y-2.5">
         <h2 className="text-center md:text-left">⋆⊱༻𖥸༺⊰⋆</h2>
         <Link

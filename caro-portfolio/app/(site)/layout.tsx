@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={robotoMono.variable}>
-      <body className={`bg-[#F1EEE6]`}>
+      <body className={`bg-[#F1EEE6] font-roboto-mono`}>
         <header className="md:h-screen md:fixed md:top-0 md:left-0">
           <Nav />
         </header>
