@@ -1,5 +1,5 @@
+import PhotoCarousel from "@/components/Carousel/photoCarousel";
 import { getCollectionBySlug } from "@/sanity/sanity-utils";
-import Image from "next/image";
 
 export default async function CollectionPage({
   params,
@@ -19,9 +19,10 @@ export default async function CollectionPage({
       {collection.pieces.map((piece) => (
         <div key={piece.slug}>
           <div className="md:flex">
-            {/* Gallery */}
-            <div className="flex flex-col items-center">
-              <Image
+            {/* Carousel */}
+            {/* <div className="flex flex-col items-center"> */}
+            <div>
+              {/* <Image
                 src={piece.coverImage.url}
                 width={piece.coverImage.width}
                 height={piece.coverImage.height}
@@ -31,7 +32,8 @@ export default async function CollectionPage({
               <div className="space-x-5 text-15">
                 <span>{`<`}</span>
                 <span>{`>`}</span>
-              </div>
+              </div> */}
+              <PhotoCarousel images={piece.images} />
             </div>
 
             {/* Piece content */}

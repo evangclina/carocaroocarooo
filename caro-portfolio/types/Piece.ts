@@ -1,4 +1,4 @@
-import { Image } from "./Image";
+import { Image } from "./ImageType";
 
 export type PieceStatus = "sold" | "available";
 
