@@ -25,7 +25,7 @@ export default function RootLayout({
         <header className="h-screen fixed top-0 left-0">
           <Nav />
         </header>
-        <main className="md:ml-45 font-roboto-mono">{children}</main>
+        <main className="md:ml-45">{children}</main>
       </body>
     </html>
   );
