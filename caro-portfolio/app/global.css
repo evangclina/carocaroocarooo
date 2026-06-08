@@ -3,4 +3,7 @@
 @theme {
   --font-roboto-mono: var(--font-roboto-mono);
   --font-arial: Arial, Helvetica, sans-serif;
+  --text-15: 15px;
+  --text-13: 13px;
+  --text-11: 11px;
 }

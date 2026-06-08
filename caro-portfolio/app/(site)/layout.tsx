@@ -6,6 +6,7 @@ import "../global.css";
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "700"],
   variable: "--font-roboto-mono",
 });
 
@@ -22,10 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={robotoMono.variable}>
       <body className={`bg-[#F1EEE6]`}>
-        <header className="h-screen fixed top-0 left-0">
+        <header className="md:h-screen md:fixed md:top-0 md:left-0">
           <Nav />
         </header>
-        <main className="md:ml-45">{children}</main>
+        <main className="md:ml-55">
+          <div className="mx-10 mt-10 md:mt-19">{children}</div>
+        </main>
       </body>
     </html>
   );

@@ -15,34 +15,50 @@ export default async function CollectionPage({
   }
 
   return (
-    <div className="mx-7.5 mt-1.5">
-      <h1 className="font-arial text-2xl flex justify-center">
-        {collection.name}
-      </h1>
+    <div>
       {collection.pieces.map((piece) => (
-        <div key={piece.slug} className="mb-10">
-          <div>
-            <h2 className="text-sm">{piece.name}</h2>
-          </div>
+        <div key={piece.slug}>
           <div className="md:flex">
-            <div className="w-full">
+            {/* Gallery */}
+            <div className="flex flex-col items-center">
               <Image
                 src={piece.coverImage.url}
                 width={piece.coverImage.width}
                 height={piece.coverImage.height}
                 alt={piece.name}
-                className="w-full object-cover h-auto"
+                // className="w-full object-cover h-auto"
               />
-            </div>
-            <div className="grid grid-row-2 items-center w-full ml-5">
-              <div className="mt-2 md:mt-0 text-justify text-md">
-                {piece.description}
+              <div className="space-x-5 text-15">
+                <span>{`<`}</span>
+                <span>{`>`}</span>
               </div>
-              <button
-                className={`${piece.status === "available" ? "" : "disabled:opacity-50 hover:block"} border  w-25 h-15 cursor-pointer justify-self-end `}
-              >
-                {piece.status === "available" ? "Inquire" : "Sold"}
-              </button>
+            </div>
+
+            {/* Piece content */}
+            <div className="md:ml-5 flex flex-col md:items-start md:justify-between md:max-w-md w-full">
+              <div className="font-roboto-mono self-start">
+                <h2 className="mb-5 font-bold text-15">{piece.name}</h2>
+                <p className="mb-15 text-11">{piece.description}</p>
+                <h3 className="text-13">material</h3>
+                <h4 className="mb-5 text-11">{piece.material}</h4>
+                <h3 className="text-13">dimensiones</h3>
+                <h4 className="text-11 mb-5 md:mb-0">
+                  {piece.dimensions.width}W x {piece.dimensions.height}H
+                </h4>
+              </div>
+
+              <div className="self-end md:self-auto font-roboto-mono">
+                <button
+                  className={`${piece.status === "available" ? "cursor-pointer" : "disabled:opacity-50"}  bg-[#CDC6B0] md:mb-[22.5px] text-11 inline-grid grid-cols-1 grid-rows-1 place-items-center py-2.5 px-5 mb-10`}
+                >
+                  <span className="[grid-area:1/1]">
+                    {piece.status === "available" ? "inquiry" : "sold"}
+                  </span>
+                  <span className="[grid-area:1/1] invisible aria-hidden:*">
+                    inquiry
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
