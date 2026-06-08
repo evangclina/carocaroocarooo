@@ -41,20 +41,18 @@ export async function getCollectionBySlug(slug: string): Promise<Collection> {
       "image": image.asset->url,
       description,
       pieces[]{
-        _id, 
-        _createdAt,
         name, 
         slug, 
         "coverImage": {
-          "url": image.asset->url, 
-          "width": image.asset->metadata.dimensions.width, 
-          "height": image.asset->metadata.dimensions.height
+          "url": coverImage.asset->url, 
+          "width": coverImage.asset->metadata.dimensions.width, 
+          "height": coverImage.asset->metadata.dimensions.height
         },
         images[]{
           _id, 
-          "url": image.asset->url, 
-          "width": image.asset->metadata.dimensions.width, 
-          "height": image.asset->metadata.dimensions.height
+          "url": asset->url, 
+          "width": asset->metadata.dimensions.width, 
+          "height": asset->metadata.dimensions.height
         },
         status, 
         description, 

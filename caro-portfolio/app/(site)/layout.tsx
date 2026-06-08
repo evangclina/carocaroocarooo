@@ -1,12 +1,12 @@
 import Nav from "@/components/Header/nav";
 import { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 import "../global.css";
 
-const roboto = Roboto({
+const robotoMono = Roboto_Mono({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-  variable: "--font-roboto",
+  display: "swap",
+  variable: "--font-roboto-mono",
 });
 
 export const metadata: Metadata = {
@@ -20,12 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${roboto.variable} bg-[#F1EEE6]`}>
+    <html lang="en" className={robotoMono.variable}>
+      <body className={`bg-[#F1EEE6]`}>
         <header className="h-screen fixed top-0 left-0">
           <Nav />
         </header>
-        <main className="md:ml-45 font-roboto">{children}</main>
+        <main className="md:ml-45 font-roboto-mono">{children}</main>
       </body>
     </html>
   );

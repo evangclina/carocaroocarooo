@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --font-roboto: var(--font-roboto);
+  --font-roboto-mono: var(--font-roboto-mono);
   --font-arial: Arial, Helvetica, sans-serif;
 }

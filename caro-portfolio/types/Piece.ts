@@ -8,8 +8,6 @@ export type Dimensions = {
 };
 
 export type Piece = {
-  _id: string;
-  _createdAt: Date;
   name: string;
   slug: string;
   coverImage: Image;
