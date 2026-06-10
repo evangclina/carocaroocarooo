@@ -1,11 +1,10 @@
 export default function Contact() {
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-2 font-arial text-m">Contact</h1>
-      <div className="flex-col space-x-2 font-roboto-mono text-13">
-        <p>If you have any question please contact me!</p>
-        <p className="flex">Mail: carocaroocarooo@gmail.com</p>
-        <p>Instagram: carocaracol</p>
+      <h1 className="text-2xl font-bold mb-5 text-13">contacto</h1>
+      <div className="flex-col space-x-2 font-roboto-mono text-11">
+        {/* <p>If you have any question please contact me!</p> */}
+        <p className="flex">˗ˏˋ ꒰ 🖂 ꒱ ˎˊ˗ carocaroocarooo@gmail.com </p>
       </div>
     </div>
   );
