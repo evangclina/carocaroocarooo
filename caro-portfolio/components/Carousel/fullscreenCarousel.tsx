@@ -10,7 +10,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../ui/carousel";
-import { Dialog, DialogContent, DialogTitle } from "../ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "../ui/dialog";
 
 type Props = {
   images: ImageType[];
@@ -37,21 +43,31 @@ export default function FullscreenCarousel({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogTitle className="hidden">Photo</DialogTitle>
       <DialogContent className="w-full h-screen p-0 border-none">
-        <Carousel setApi={setApi} opts={{ loop: true }}>
-          <CarouselContent>
-            {images.map((image, index) => (
-              <CarouselItem key={index}>
-                <div className="h-screen relative">
-                  <Image src={image.url} fill alt={`${index + 1}`} />
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        <DialogHeader>
+          <DialogTitle className="hidden">Photo Carousel</DialogTitle>
+          <DialogDescription className="hidden">
+            Photo Carousel
+          </DialogDescription>
+          <Carousel setApi={setApi} opts={{ loop: true }}>
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="h-screen relative">
+                    <Image
+                      src={image.url}
+                      fill
+                      alt={`${index + 1}`}
+                      loading="eager"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </DialogHeader>
       </DialogContent>
     </Dialog>
   );
