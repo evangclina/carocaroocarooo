@@ -15,7 +15,7 @@ export default function Info() {
 
       <div className="max-w-87.5 md:ml-5">
         {/* info */}
-        <h1 className="mb-2.5 font-bold text-13">info</h1>
+        <h1 className="mb-2.5 font-bold text-15">info</h1>
         <div className="space-y-5 text-11">
           <p>
             Carolina Vega es diseñadora de producto & artista. Su trabajo se

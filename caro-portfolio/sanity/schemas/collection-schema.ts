@@ -45,18 +45,9 @@ const collection = {
               },
             },
             {
-              name: "coverImage",
-              title: "coverImage",
-              type: "image",
-              options: {
-                hotspot: "true",
-              },
-            },
-            {
               name: "images",
               title: "Piece images",
               type: "array",
-
               of: [
                 {
                   type: "image",

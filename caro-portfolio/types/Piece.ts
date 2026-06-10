@@ -1,4 +1,4 @@
-import { Image } from "./ImageType";
+import { ImageType } from "./ImageType";
 
 export type PieceStatus = "sold" | "available";
 
@@ -10,8 +10,7 @@ export type Dimensions = {
 export type Piece = {
   name: string;
   slug: string;
-  coverImage: Image;
-  images: Image[];
+  images: ImageType[];
   status: PieceStatus;
   description: string;
   material: string;
