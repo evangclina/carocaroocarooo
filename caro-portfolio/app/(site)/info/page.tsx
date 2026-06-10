@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Info() {
   return (
     <div className="md:flex">
-      <div className="mb-5">
+      <div className="hidden md:flex mb-5">
         {/* image */}
         <Image
           src="https://images.pexels.com/photos/8532968/pexels-photo-8532968.jpeg"
