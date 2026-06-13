@@ -17,9 +17,9 @@ export default async function CollectionPage({
   return (
     <div>
       {collection.pieces.map((piece) => (
-        <div key={piece.slug}>
+        <div key={piece.slug} className="mb-5 md:mb-10">
           <div className="md:flex">
-            <div className="">
+            <div className="max-w-100 xl:max-w-125">
               <PhotoCarousel images={piece.images} />
             </div>
 
@@ -38,7 +38,7 @@ export default async function CollectionPage({
 
               <div className="self-end md:self-auto">
                 <button
-                  className={`${piece.status === "available" ? "cursor-pointer" : "disabled:opacity-50"}  bg-[#CDC6B0] md:mb-12 text-11 inline-grid grid-cols-1 grid-rows-1 place-items-center py-2.5 px-5 mb-10`}
+                  className={`${piece.status === "available" ? "cursor-pointer" : "disabled:opacity-50"}  bg-[#CDC6B0] md:mb-8 text-11 inline-grid grid-cols-1 grid-rows-1 place-items-center py-2.5 px-5 mb-10`}
                 >
                   <span className="[grid-area:1/1]">
                     {piece.status === "available" ? "inquiry" : "sold"}

@@ -16,26 +16,52 @@ export default function PhotoCarousel({ images }: { images: ImageType[] }) {
 
   return (
     <>
-      <Carousel className="w-full" opts={{ loop: true }}>
+      <Carousel opts={{ loop: true }}>
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index}>
-              <div className="w-full">
+              {/* w-ful max-w-100 h-125 */}
+              <div className="aspect-4/5 relative w-full">
                 <Image
                   src={image.url}
                   width={image.width}
                   height={image.height}
+                  // fill
+                  // sizes="(max-width: 768px) 100vw, 500px"
                   alt={`${index + 1}`}
-                  className="object-cover w-full h-auto cursor-zoom-in"
-                  onClick={() => setOpen(open)}
+                  className="object-cover w-full h-full"
+                  priority={index === 0}
                 />
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
         <div className="flex items-center justify-center gap-2.5">
-          <CarouselPrevious className="static" />
-          <CarouselNext className="static" />
+          <CarouselPrevious
+            className="relative left-auto top-auto translate-y-0 
+          border-none
+          shadow-none
+          bg-transparent
+          hover:bg-transparent
+          focus:bg-transparent
+          active:bg-transparent
+          focus-visible:ring-0
+          focus-visible:ring-offset-0
+          cursor-pointer
+          "
+          />
+          <CarouselNext
+            className="relative right-auto top-auto translate-y-0
+          border-none
+          shadow-none
+          bg-transparent
+          hover:bg-transparent
+          focus:bg-transparent
+          active:bg-transparent
+          focus-visible:ring-0
+          focus-visible:ring-offset-0
+          cursor-pointer"
+          />
         </div>
       </Carousel>
     </>
