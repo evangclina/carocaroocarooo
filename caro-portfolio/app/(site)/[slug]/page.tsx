@@ -1,4 +1,5 @@
 import PhotoCarousel from "@/components/Carousel/photoCarousel";
+import InquiryModal from "@/components/inquiryModal";
 import { getCollectionBySlug } from "@/sanity/sanity-utils";
 
 export default async function CollectionPage({
@@ -37,16 +38,7 @@ export default async function CollectionPage({
               </div>
 
               <div className="self-end md:self-auto">
-                <button
-                  className={`${piece.status === "available" ? "cursor-pointer" : "disabled:opacity-50"}  bg-[#CDC6B0] md:mb-8 text-11 inline-grid grid-cols-1 grid-rows-1 place-items-center py-2.5 px-5 mb-10`}
-                >
-                  <span className="[grid-area:1/1]">
-                    {piece.status === "available" ? "inquiry" : "sold"}
-                  </span>
-                  <span className="[grid-area:1/1] invisible aria-hidden:*">
-                    inquiry
-                  </span>
-                </button>
+                <InquiryModal name={piece.name} status={piece.status} />
               </div>
             </div>
           </div>

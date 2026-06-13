@@ -1,0 +1,38 @@
+import { PieceStatus } from "@/types/Piece";
+import InquiryForm from "./inquiryForm";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
+
+type Props = {
+  status: PieceStatus;
+  name: string;
+};
+
+export default function InquiryModal({ status, name }: Props) {
+  return (
+    <Dialog>
+      <DialogTrigger
+        disabled={status === "sold"}
+        className={`${status === "available" ? "cursor-pointer" : "disabled:opacity-50"}  bg-[#CDC6B0] md:mb-8 text-11 inline-grid grid-cols-1 grid-rows-1 place-items-center py-2.5 px-5 mb-10`}
+      >
+        <span className="[grid-area:1/1]">
+          {status === "available" ? "inquiry" : "sold"}
+        </span>
+        <span className="[grid-area:1/1] invisible aria-hidden:*">inquiry</span>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle></DialogTitle>
+          <DialogDescription></DialogDescription>
+        </DialogHeader>
+        <InquiryForm pieceTitle={name} />
+      </DialogContent>
+    </Dialog>
+  );
+}
