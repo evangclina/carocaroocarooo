@@ -6,11 +6,10 @@ export default async function Home() {
     <div className="absolute inset-0 -z-1 top-0 left-0">
       <Image
         src={bgImage}
-        alt="stars image"
+        alt="background stars image"
         fill
         priority
-        // quality={100}
-        className="object-cover"
+        className="object-cover w-[80%] h-auto"
       />
     </div>
   );

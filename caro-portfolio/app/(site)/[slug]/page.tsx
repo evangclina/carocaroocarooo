@@ -21,7 +21,7 @@ export default async function CollectionPage({
         <div key={piece.slug} className="mb-5 md:mb-10">
           <div className="md:flex">
             <div className="w-full max-w-100 xl:max-w-125 shrink-0">
-              <PhotoCarousel images={piece.images} />
+              <PhotoCarousel images={piece.images} name={piece.name} />
             </div>
 
             {/* Piece content */}

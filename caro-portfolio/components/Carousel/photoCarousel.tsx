@@ -10,7 +10,12 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 
-export default function PhotoCarousel({ images }: { images: ImageType[] }) {
+type Props = {
+  images: ImageType[];
+  name: string;
+};
+
+export default function PhotoCarousel({ images, name }: Props) {
   return (
     <>
       <Carousel opts={{ loop: true }}>
@@ -25,7 +30,7 @@ export default function PhotoCarousel({ images }: { images: ImageType[] }) {
                   height={image.height}
                   // fill
                   // sizes="(max-width: 768px) 100vw, 500px"
-                  alt={`${index + 1}`}
+                  alt={`Photo number ${index + 1} of ${name}`}
                   className="object-cover w-full h-full"
                   priority={index === 0}
                 />
