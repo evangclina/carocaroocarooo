@@ -2,7 +2,6 @@
 
 import { ImageType } from "@/types/ImageType";
 import Image from "next/image";
-import { useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -12,8 +11,6 @@ import {
 } from "../ui/carousel";
 
 export default function PhotoCarousel({ images }: { images: ImageType[] }) {
-  const [open, setOpen] = useState(false);
-
   return (
     <>
       <Carousel opts={{ loop: true }}>
