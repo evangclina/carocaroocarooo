@@ -11,10 +11,6 @@ export default async function CollectionPage({
 
   const collection = await getCollectionBySlug(slug);
 
-  if (!collection) {
-    return <div> Collection not Found</div>;
-  }
-
   return (
     <div>
       {collection.pieces.map((piece) => (

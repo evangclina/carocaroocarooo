@@ -1,5 +1,3 @@
-"use client";
-
 import { ImageType } from "@/types/ImageType";
 import Image from "next/image";
 import {
