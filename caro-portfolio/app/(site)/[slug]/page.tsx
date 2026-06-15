@@ -20,6 +20,7 @@ export default async function CollectionPage({
       {collection.pieces.map((piece) => (
         <div key={piece.slug} className="mb-5 md:mb-10">
           <div className="md:flex">
+            {/* Piece image carousel */}
             <div className="w-full max-w-100 xl:max-w-125 shrink-0">
               <PhotoCarousel images={piece.images} name={piece.name} />
             </div>

@@ -1,5 +1,6 @@
 import { StructureResolver } from "sanity/structure";
 
+// Modifies structure on sanity studios dashboard
 export const structure: StructureResolver = (S) =>
   S.list()
     .title("Content")

@@ -22,14 +22,11 @@ export default function PhotoCarousel({ images, name }: Props) {
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index}>
-              {/* w-ful max-w-100 h-125 */}
               <div className="aspect-4/5 relative w-full">
                 <Image
                   src={image.url}
                   width={image.width}
                   height={image.height}
-                  // fill
-                  // sizes="(max-width: 768px) 100vw, 500px"
                   alt={`Photo number ${index + 1} of ${name}`}
                   className="object-cover w-full h-full"
                   priority={index === 0}
