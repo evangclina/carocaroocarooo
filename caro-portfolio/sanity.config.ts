@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
+import { structure } from "./sanity/config/structure";
 import schemas from "./sanity/schemas";
 
 const config = defineConfig({
@@ -13,9 +14,18 @@ const config = defineConfig({
 
   basePath: "/admin",
 
-  plugins: [structureTool()],
+  plugins: [structureTool({ structure })],
 
   schema: { types: schemas },
+
+  document: {
+    newDocumentOptions: (prev, { creationContext }) => {
+      if (creationContext.type === "global") {
+        return prev.filter((item) => item.templateId !== "infoImage");
+      }
+      return prev;
+    },
+  },
 });
 
 export default config;

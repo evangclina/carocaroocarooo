@@ -1,15 +1,26 @@
+import { getInfoImage } from "@/sanity/sanity-utils";
+import { ImageType } from "@/types/ImageType";
 import Image from "next/image";
 
-export default function Info() {
+type infoImageType = {
+  _id: string;
+  portrait: ImageType;
+};
+
+export default async function Info() {
+  const infoImage: infoImageType = await getInfoImage();
+  console.log(infoImage.portrait.url);
+
   return (
     <div className="md:flex">
-      <div className="hidden md:flex mb-5">
+      <div className="relative hidden md:flex mb-5 h-80 w-auto">
         {/* image */}
         <Image
-          src="https://images.pexels.com/photos/8532968/pexels-photo-8532968.jpeg"
-          height={100}
-          width={200}
+          src={infoImage.portrait.url}
+          height={infoImage.portrait.height}
+          width={infoImage.portrait.width}
           alt="Photo of Carolina Vega"
+          className="w-full object-cover"
         />
       </div>
 

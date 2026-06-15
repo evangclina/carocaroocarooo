@@ -116,6 +116,7 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
         active:scale-95
         active:shadow-inner
         "
+        aria-label="send email for inquiry"
       >
         {isSubmitting ? "enviando" : "enviar"}
       </button>

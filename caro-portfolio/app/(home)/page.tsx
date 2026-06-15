@@ -9,7 +9,7 @@ export default async function Home() {
         alt="stars image"
         fill
         priority
-        quality={100}
+        // quality={100}
         className="object-cover"
       />
     </div>

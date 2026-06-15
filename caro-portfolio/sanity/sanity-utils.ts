@@ -1,16 +1,9 @@
 import { Collection } from "@/types/Collection";
 import { createClient, groq } from "next-sanity";
+import clientConfig from "./config/client-config";
 
 export async function getCollections(): Promise<Collection[]> {
-  const client = createClient({
-    projectId: "nkuwkr79",
-
-    dataset: "production",
-
-    apiVersion: "2026-05-26",
-  });
-
-  return client.fetch(
+  return createClient(clientConfig).fetch(
     groq`*[_type == "collection"]{
       _id, 
       _createdAt,
@@ -22,17 +15,7 @@ export async function getCollections(): Promise<Collection[]> {
 }
 
 export async function getCollectionBySlug(slug: string): Promise<Collection> {
-  const client = createClient({
-    projectId: "nkuwkr79",
-
-    dataset: "production",
-
-    apiVersion: "2026-05-26",
-
-    useCdn: false,
-  });
-
-  const collection = await client.fetch(
+  const collection = await createClient(clientConfig).fetch(
     `*[_type == "collection" && slug.current == $slug][0]{
       _id,
       _createdAt,
@@ -59,4 +42,18 @@ export async function getCollectionBySlug(slug: string): Promise<Collection> {
   );
 
   return collection;
+}
+
+export async function getInfoImage() {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "infoImage"][0]{
+      _id, 
+      "portrait": {
+          _id, 
+          "url": portrait.asset->url, 
+          "width": portrait.asset->metadata.dimensions.width, 
+          "height": portrait.asset->metadata.dimensions.height
+        },
+    }`,
+  );
 }
