@@ -4,14 +4,7 @@ import { Resend } from "resend";
 import { inquirySchema } from "./validations/inquirySchema";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-type data = {
-  pieceTitle: string;
-  clientName: string;
-  email: string;
-  message: string;
-};
-
-export const sendEmail = async (data: data) => {
+export const sendEmail = async (data: unknown) => {
   const validated = inquirySchema.parse(data);
 
   await resend.emails.send({

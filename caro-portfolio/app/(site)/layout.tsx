@@ -1,4 +1,5 @@
 import Nav from "@/components/Header/nav";
+import { Toaster } from "@/components/ui/sonner";
 import { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import "../global.css";
@@ -28,6 +29,7 @@ export default function RootLayout({
         </header>
         <main className="md:ml-55">
           <div className="mx-10 mt-20 md:mt-19">{children}</div>
+          <Toaster />
         </main>
       </body>
     </html>
