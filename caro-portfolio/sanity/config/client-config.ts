@@ -1,4 +1,6 @@
-const config = {
+import { createClient } from "next-sanity";
+
+export const client = createClient({
   projectId: "nkuwkr79",
 
   dataset: "production",
@@ -6,6 +8,4 @@ const config = {
   apiVersion: "2026-05-26",
 
   useCdn: false,
-};
-
-export default config;
+});

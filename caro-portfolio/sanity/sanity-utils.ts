@@ -1,9 +1,8 @@
 import { Collection } from "@/types/Collection";
-import { createClient, groq } from "next-sanity";
-import clientConfig from "./config/client-config";
-
+import { groq } from "next-sanity";
+import { client } from "./config/client-config";
 export async function getCollections(): Promise<Collection[]> {
-  return createClient(clientConfig).fetch(
+  return client.fetch(
     groq`*[_type == "collection"]{
       _id, 
       _createdAt,
@@ -15,7 +14,7 @@ export async function getCollections(): Promise<Collection[]> {
 }
 
 export async function getCollectionBySlug(slug: string): Promise<Collection> {
-  const collection = await createClient(clientConfig).fetch(
+  const collection = await client.fetch(
     `*[_type == "collection" && slug.current == $slug][0]{
       _id,
       _createdAt,
@@ -45,7 +44,7 @@ export async function getCollectionBySlug(slug: string): Promise<Collection> {
 }
 
 export async function getInfoImage() {
-  return createClient(clientConfig).fetch(
+  return client.fetch(
     groq`*[_type == "infoImage"][0]{
       _id, 
       "portrait": {

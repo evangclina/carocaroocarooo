@@ -27,6 +27,11 @@ export default function PhotoCarousel({ images, name }: Props) {
                   height={image.height}
                   alt={`Photo number ${index + 1} of ${name}`}
                   className="object-cover w-full h-full"
+                  sizes="
+                  (max-width: 640px) 100vw,
+                  (max-width: 1024px) 80vw, 
+                  50vw,
+                  "
                   priority={index === 0}
                 />
               </div>
