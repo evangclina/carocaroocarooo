@@ -108,7 +108,14 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="self-end mt-2.5 bg-[#CDC6B0] p-2"
+        className="self-end mt-2.5 bg-[#CDC6B0] py-2 px-4 text-13 cursor-pointer
+        shadow 
+        transition-all 
+        duration-100
+        ease-in-out
+        active:scale-95
+        active:shadow-inner
+        "
       >
         {isSubmitting ? "enviando" : "enviar"}
       </button>
