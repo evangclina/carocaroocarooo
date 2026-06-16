@@ -15,8 +15,8 @@ export const sendEmail = async (data: data) => {
   const validated = inquirySchema.parse(data);
 
   await resend.emails.send({
-    from: "onboarding@resend.dev",
-    to: "evangelina1001@hotmail.com",
+    from: "carocaroocarooo <inquiries@carocaroocarooo.com>",
+    to: "carocaroocarooo@gmail.com",
     subject: `Inquiry about ${validated.pieceTitle}`,
     replyTo: data.email,
     html: `
