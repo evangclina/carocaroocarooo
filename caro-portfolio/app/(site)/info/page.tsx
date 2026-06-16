@@ -13,7 +13,7 @@ export default async function Info() {
 
   return (
     <div className="md:flex">
-      <div className="relative hidden md:flex mb-5 h-80 w-auto">
+      <div className="relative hidden md:flex mb-5 h-80 w-64">
         {/* image */}
         <Image
           src={infoImage.portrait.url}
