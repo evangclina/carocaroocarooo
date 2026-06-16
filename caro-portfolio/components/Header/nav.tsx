@@ -8,7 +8,7 @@ export default async function Nav() {
   return (
     <nav>
       {/* Desktop navegation */}
-      <div className="hidden md:flex mt-10 ml-10">
+      <div className="hidden md:flex mt-20 ml-10">
         <NavLinks collections={collections} />
       </div>
       {/* Mobile navegation */}

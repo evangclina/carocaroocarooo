@@ -13,15 +13,15 @@ export default function NavLinks({ collections, onLinkClick }: NavLinkProps) {
 
   return (
     <ul className="flex-col space-y-5 md:space-y-3 md:text-13">
-      <li className="font-arial font-bold flex-col space-y-2.5">
-        <h2 className="hidden md:flex md:text-left">⋆⊱༻𖥸༺⊰⋆</h2>
+      <li className="font-arial font-bold flex-col">
+        {/* <h2 className="hidden md:flex md:text-left">⋆⊱༻𖥸༺⊰⋆</h2> */}
         <Link
           href={"/"}
           onClick={onLinkClick}
           className={pathname === "/" ? "font-bold" : " "}
         >
           <h2 className="hidden md:flex md:text-left md:text-15 text-[20px]">
-            carocaroocarooo
+            carocaroocaroo ‧˚₊⊹˙
           </h2>
         </Link>
       </li>
