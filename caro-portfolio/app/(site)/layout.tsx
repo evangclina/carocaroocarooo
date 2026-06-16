@@ -1,4 +1,5 @@
 import Nav from "@/components/Header/nav";
+import LanguageBtn from "@/components/languageBtn";
 
 export default function RootLayout({
   children,
@@ -11,6 +12,7 @@ export default function RootLayout({
         <header className="md:h-screen md:fixed md:top-0 md:left-0">
           <Nav />
         </header>
+        <LanguageBtn />
         <main className="md:ml-55">
           <div className="mx-10 mt-20 md:mt-19">{children}</div>
         </main>
