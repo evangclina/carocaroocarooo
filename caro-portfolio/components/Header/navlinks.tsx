@@ -1,6 +1,6 @@
 "use client";
+import { Link } from "@/i18n/navigation";
 import { Collection } from "@/types/Collection";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 type NavLinkProps = {
@@ -43,7 +43,7 @@ export default function NavLinks({ collections, onLinkClick }: NavLinkProps) {
               pathname === `/${collection.slug}` ? "font-bold" : "font-normal"
             }
           >
-            {String(index + 1).padStart(2, "0")}___ {collection.name}
+            {String(index + 1).padStart(2, "0")} ___ {collection.name}
           </Link>
         </li>
       ))}

@@ -1,7 +1,7 @@
 "use client";
+import { Link } from "@/i18n/navigation";
 import { Collection } from "@/types/Collection";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import NavLinks from "./navlinks";
 
