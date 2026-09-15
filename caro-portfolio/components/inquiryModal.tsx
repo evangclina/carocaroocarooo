@@ -10,6 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
+import { useTranslations } from "next-intl";
 
 type Props = {
   status: PieceStatus;
@@ -18,6 +19,7 @@ type Props = {
 
 export default function InquiryModal({ status, name }: Props) {
   const [open, setOpen] = useState(false);
+  const t = useTranslations("Buttons")
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger
@@ -26,9 +28,9 @@ export default function InquiryModal({ status, name }: Props) {
         `}
       >
         <span className="[grid-area:1/1]">
-          {status === "available" ? "inquiry" : "sold"}
+          {status === "available" ? t("inquiry") : t("sold")}
         </span>
-        <span className="[grid-area:1/1] invisible aria-hidden:*">inquiry</span>
+        <span className="[grid-area:1/1] invisible aria-hidden:*">{t("inquiry")}</span>
       </DialogTrigger>
       <DialogContent className="bg-[#F1EEE6]">
         <DialogHeader>

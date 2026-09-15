@@ -1,9 +1,25 @@
 {
   "Navbar": {
-    "home": "Home",
-    "contact": "Contact"
+    "contact": "contact"
   },
   "Buttons": {
-    "inquire": "Inquire"
-  }
+    "inquiry": "inquiry",
+    "sold": "sold"
+  },
+  "Modal":{
+    "name": "name",
+    "message": "message",
+    "send": "send", 
+    "sending": "sending",
+    "success": "email sent", 
+    "error": "something went wrong"
+  },
+  "Piece": {
+    "dimensions": "dimensions"
+  }, 
+  "Info": {
+    "p1": "Carolina Vega is a product designer & artist. Her work is expressed through clay, porcelain, and metal, bringing to life pieces that emerge from both her imagination and her conscious world. Her work reflects experiences, emotions, and dreams, translated into forms, textures, and materiality.", 
+    "p2": "Her creative process is experimental. From her small studio in Guadalajara, she explores the use of ashes, precious metals such as silver, shells, stones, and plants to develop unique finishes for her glazes. In 2025, she studied glaze formulation at Casa Ceniza in Guadalajara, Mexico.", 
+    "p3": "As a product, furniture, and interior designer, she collaborates with Huber Design Studio, where she currently leads the objects line in collaboration with artisans from the region. Guadalajara, México, 2026."
+  }  
 }

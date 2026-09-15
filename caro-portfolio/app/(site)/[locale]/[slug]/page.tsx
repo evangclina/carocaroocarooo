@@ -1,6 +1,7 @@
 import PhotoCarousel from "@/components/Carousel/photoCarousel";
 import InquiryModal from "@/components/inquiryModal";
 import { getCollectionBySlug } from "@/sanity/sanity-utils";
+import { getTranslations } from "next-intl/server";
 
 export default async function CollectionPage({
   params,
@@ -8,6 +9,7 @@ export default async function CollectionPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const t = await getTranslations("Piece")
 
   const collection = await getCollectionBySlug(slug);
 
@@ -28,7 +30,7 @@ export default async function CollectionPage({
                 <p className="mb-10 md:mb-15 text-11">{piece.description}</p>
                 <h3 className="text-13">material</h3>
                 <h4 className="mb-5 text-11">{piece.material}</h4>
-                <h3 className="text-13">dimensiones</h3>
+                <h3 className="text-13">{t("dimensions")}</h3>
                 <h4 className="text-11 mb-5 md:mb-0">
                   {piece.dimensions.width}W x {piece.dimensions.height}H
                 </h4>
