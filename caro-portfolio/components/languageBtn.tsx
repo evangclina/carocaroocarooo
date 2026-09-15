@@ -1,4 +1,4 @@
-"use cient"
+"use client"
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
 export default function LanguageBtn() {
