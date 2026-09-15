@@ -2,9 +2,14 @@ import { getCollections } from "@/sanity/sanity-utils";
 import BurgerMenu from "./burgermenu";
 import NavLinks from "./navlinks";
 import { getTranslations } from "next-intl/server";
+import { getLocale } from "next-intl/server";
 
-export default async function Nav() {
-  const collections = await getCollections();
+type Locale = "es" | "en";
+
+export default async function Nav() { 
+
+  const locale = await getLocale()
+  const collections = await getCollections(locale as Locale);
   const translations = await getTranslations()
 
   return (

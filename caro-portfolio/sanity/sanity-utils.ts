@@ -1,18 +1,24 @@
 import { Collection } from "@/types/Collection";
 import { groq } from "next-sanity";
 import { client } from "./config/client-config";
-export async function getCollections(): Promise<Collection[]> {
+
+type Locale = "es" | "en";
+
+export async function getCollections(locale: Locale): Promise<Collection[]> {
   return client.fetch(
     groq`*[_type == "collection"]{
       _id, 
       _createdAt,
-      "name": name.es,
+      "name": select(
+        $locale == "en" => name.en,
+        name.es
+      ),
       "slug": slug.current,
       pieces
     }`,
+    {locale}
   );
 }
-type Locale = "es" | "en";
 
 export async function getCollectionBySlug(slug: string, locale: Locale): Promise<Collection> {
 
