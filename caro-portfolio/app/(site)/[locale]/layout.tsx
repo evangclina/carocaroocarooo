@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import Footer from "@/components/Footer/footer";
 
 export default async function RootLayout({
   children,
@@ -31,6 +32,7 @@ export default async function RootLayout({
         <main className="md:ml-55">
           <div className="mx-10 mt-20 md:mt-19">{children}</div>
         </main>
+        <footer><Footer/></footer>
       </div>
     </NextIntlClientProvider>
     </>
