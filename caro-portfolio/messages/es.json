@@ -12,7 +12,10 @@
     "send": "enviar",
     "sending": "enviando",
     "success": "correo enviado", 
-    "error": "algo salió mal"
+    "error": "algo salió mal", 
+    "clientNameError": "Tu nombre es requerido", 
+    "emailError": "Ingresa una dirección de correo electrónico válida", 
+    "messageError": "El mensaje es requerido"
   },
   "Piece": {
     "dimensions": "dimensiones"

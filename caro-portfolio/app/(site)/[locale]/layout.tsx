@@ -5,6 +5,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Footer from "@/components/Footer/footer";
+import SyncLang from "@/components/syncLang";
 
 export default async function RootLayout({
   children,
@@ -24,6 +25,7 @@ export default async function RootLayout({
   return (
     <>
     <NextIntlClientProvider messages={messages} locale={locale}>
+      <SyncLang/>
       <div className={`bg-[#F1EEE6] font-roboto-mono min-h-screen flex flex-col`}>
         <header className="md:h-screen md:fixed md:top-0 md:left-0">
           <Nav />
