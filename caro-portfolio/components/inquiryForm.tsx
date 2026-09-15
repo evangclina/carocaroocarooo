@@ -4,11 +4,12 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 import {
-  inquirySchema,
+  createInquirySchema,
   type InquiryFormValues,
 } from "@/lib/validations/inquirySchema";
 
 import { sendEmail } from "@/lib/sendInquiry";
+import { useTranslations } from "next-intl";
 
 type Props = {
   pieceTitle: string;
@@ -16,6 +17,10 @@ type Props = {
 };
 
 export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
+  const t = useTranslations("Modal")
+
+  const inquirySchema = createInquirySchema(t)
+  
   const {
     register,
     handleSubmit,
@@ -35,27 +40,25 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
     try {
       await sendEmail(data);
       reset();
-      toast.success("email sent", { position: "top-center" });
+      toast.success(t("success"), { position: "top-center" });
       onSuccess();
     } catch {
-      toast.error("something went wrong", { position: "top-center" });
+      toast.error(t("error"), { position: "top-center" });
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col text-13">
+    <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" className="flex flex-col text-13">
       <div>
         <input type="hidden" {...register("pieceTitle")} />
 
         <div className="flex flex-col mb-2.5">
           <label htmlFor="client-name" className="mb-1.5">
-            nombre
+            {t("name")}
           </label>
           <input
             type="text"
             id="client-name"
-            placeholder="john doe"
-            autoComplete="name"
             {...register("clientName")}
             className="h-8 p-2 bg-[#CDC6B0] rounded-xs"
             aria-invalid={!!errors.clientName}
@@ -74,8 +77,7 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
           <input
             id="email"
             type="email"
-            autoComplete="email"
-            placeholder="ejemplo@mail.com"
+            
             {...register("email")}
             className="h-8 p-2 bg-[#CDC6B0]"
             aria-invalid={!!errors.email}
@@ -88,12 +90,11 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
 
         <div className="flex flex-col mb-2.5">
           <label htmlFor="message" className="mb-1.5">
-            mensaje
+            {t("message")}
           </label>
           <textarea
             id="message"
             rows={4}
-            placeholder={`Me interesa saber mas detalles de la pieza ${pieceTitle}`}
             {...register("message")}
             className="h-16 p-2 bg-[#CDC6B0] text-wrap"
             aria-invalid={!!errors.message}
@@ -118,7 +119,7 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
         "
         aria-label="send email for inquiry"
       >
-        {isSubmitting ? "enviando" : "enviar"}
+        {isSubmitting ? t("sending") : t("send")}
       </button>
     </form>
   );

@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import "./global.css";
+import { cookies } from "next/headers"; // <-- Import cookies
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -16,13 +17,15 @@ export const metadata: Metadata = {
     "Website for the brand carocaroocarooo about handamade ceramic pieces",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const locale = cookieStore.get("NEXT_LOCALE")?.value || "es";
   return (
-    <html lang="en" className={robotoMono.variable}>
+    <html lang={locale} className={robotoMono.variable}>
       <body className={`bg-[#F1EEE6] font-roboto-mono`}>
         {children}
         <Toaster />

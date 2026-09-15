@@ -1,7 +1,9 @@
 "use client";
 import { Collection } from "@/types/Collection";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
+import type { getTranslations } from "next-intl/server";
+import { useTransition } from "react";
+import { useTranslations } from "next-intl";
 
 type NavLinkProps = {
   collections: Collection[];
@@ -10,7 +12,7 @@ type NavLinkProps = {
 
 export default function NavLinks({ collections, onLinkClick }: NavLinkProps) {
   const pathname = usePathname();
-
+  const t = useTranslations("Navbar")
   return (
     <ul className="flex-col space-y-5 md:space-y-3 md:text-13">
       <li className="font-arial font-bold flex-col">
@@ -43,7 +45,7 @@ export default function NavLinks({ collections, onLinkClick }: NavLinkProps) {
               pathname === `/${collection.slug}` ? "font-bold" : "font-normal"
             }
           >
-            {String(index + 1).padStart(2, "0")}___ {collection.name}
+            {String(index + 1).padStart(2, "0")} ___ {collection.name}
           </Link>
         </li>
       ))}
@@ -53,7 +55,7 @@ export default function NavLinks({ collections, onLinkClick }: NavLinkProps) {
           onClick={onLinkClick}
           className={pathname === "/contact" ? "font-bold" : "font-normal"}
         >
-          {String(collections.length + 1).padStart(2, "0")} ___ contact
+          {String(collections.length + 1).padStart(2, "0")} ___ {t("contact")}
         </Link>
       </li>
     </ul>

@@ -1,12 +1,13 @@
 "use client";
+import { Link } from "@/i18n/navigation";
 import { Collection } from "@/types/Collection";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import NavLinks from "./navlinks";
 
 export default function BurgerMenu({
   collections,
+
 }: {
   collections: Collection[];
 }) {
@@ -21,14 +22,14 @@ export default function BurgerMenu({
           className="md:hidden size-10"
           strokeWidth={1}
         />
-        <Link href={"/"} className="md:hidden font-arial font-bold">
+        <Link href={"/"} className="md:hidden font-arial font-bold text-15">
           carocaroocaroo ‧˚₊⊹˙
         </Link>
       </div>
 
       {/* Mobile Open Menu */}
       <div
-        className={`fixed top-0 h-screen w-screen max-w-192.5 bg-white z-50 transition-transform duration-300 md:hidden ${isOpen ? "translate-y-0" : "-translate-y-full"}`}
+        className={`fixed top-0 h-screen w-screen max-w-192.5 bg-[#F1EEE6] z-50 transition-transform duration-300 md:hidden ${isOpen ? "translate-y-0" : "-translate-y-full"}`}
       >
         <div>
           <X
