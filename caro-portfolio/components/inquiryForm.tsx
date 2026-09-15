@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 import {
-  inquirySchema,
+  createInquirySchema,
   type InquiryFormValues,
 } from "@/lib/validations/inquirySchema";
 
@@ -18,6 +18,9 @@ type Props = {
 
 export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
   const t = useTranslations("Modal")
+
+  const inquirySchema = createInquirySchema(t)
+  
   const {
     register,
     handleSubmit,
