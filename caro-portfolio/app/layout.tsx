@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={robotoMono.variable}>
+    <html lang="" className={robotoMono.variable}>
       <body className={`bg-[#F1EEE6] font-roboto-mono`}>
         {children}
         <Toaster />

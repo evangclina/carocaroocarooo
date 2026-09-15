@@ -24,12 +24,12 @@ export default async function RootLayout({
   return (
     <>
     <NextIntlClientProvider messages={messages} locale={locale}>
-      <div className={`bg-[#F1EEE6] font-roboto-mono`}>
+      <div className={`bg-[#F1EEE6] font-roboto-mono min-h-screen flex flex-col`}>
         <header className="md:h-screen md:fixed md:top-0 md:left-0">
           <Nav />
         </header>
         <LanguageBtn /> 
-        <main className="md:ml-55">
+        <main className="flex-1 md:ml-55">
           <div className="mx-10 mt-20 md:mt-19">{children}</div>
         </main>
         <footer><Footer/></footer>
