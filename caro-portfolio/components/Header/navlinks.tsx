@@ -1,7 +1,6 @@
 "use client";
-import { Link } from "@/i18n/navigation";
 import { Collection } from "@/types/Collection";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 
 type NavLinkProps = {
   collections: Collection[];
