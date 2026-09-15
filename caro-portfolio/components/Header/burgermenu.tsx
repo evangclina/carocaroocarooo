@@ -22,7 +22,7 @@ export default function BurgerMenu({
           className="md:hidden size-10"
           strokeWidth={1}
         />
-        <Link href={"/"} className="md:hidden font-arial font-bold">
+        <Link href={"/"} className="md:hidden font-arial font-bold text-15">
           carocaroocaroo ‧˚₊⊹˙
         </Link>
       </div>
