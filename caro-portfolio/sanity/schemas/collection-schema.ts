@@ -9,7 +9,20 @@ const collection = {
     {
       name: "name",
       title: "Name",
-      type: "string",
+      type: "object",
+      fields: 
+      [
+        {
+          name: "es", 
+          title: "Spanish", 
+          type: "string"
+        }, 
+        {
+          name: "en", 
+          title: "English", 
+          type: "string"
+        }
+      ]
     },
     {
       name: "slug",
@@ -33,7 +46,19 @@ const collection = {
             {
               name: "name",
               title: "Name",
-              type: "string",
+              type: "object",
+              fields: [
+                {
+                  name: "es", 
+                  title: "Spanish", 
+                  type: "string"
+                }, 
+                {
+                  name: "en", 
+                  title: "English", 
+                  type: "string"
+                }
+              ]
             },
             {
               name: "slug",
@@ -81,12 +106,36 @@ const collection = {
             {
               name: "description",
               title: "Piece description",
-              type: "text",
+              type: "object",
+              fields: [
+                {
+                  name: "es", 
+                  title: "Spanish", 
+                  type: "text"
+                }, 
+                {
+                  name: "en", 
+                  title: "English", 
+                  type: "text"
+                }
+              ]
             },
             {
               name: "material",
               title: "Material",
-              type: "string",
+              type:"object",
+              fields: [
+                {
+                  name: "es", 
+                  title: "Spanish", 
+                  type: "string"
+                }, 
+                {
+                  name: "en", 
+                  title: "English", 
+                  type: "string"
+                }
+              ]
             },
             {
               name: "dimensions",
