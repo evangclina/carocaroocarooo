@@ -27,7 +27,7 @@ export default async function RootLayout({
         <header className="md:h-screen md:fixed md:top-0 md:left-0">
           <Nav />
         </header>
-        <LanguageBtn />
+        <LanguageBtn /> 
         <main className="md:ml-55">
           <div className="mx-10 mt-20 md:mt-19">{children}</div>
         </main>

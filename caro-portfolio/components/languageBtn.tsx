@@ -10,8 +10,8 @@ export default function LanguageBtn() {
   }
   
   return (
-    <div className="absolute top-0 right-0">
-      <div className="pt-10 pr-10 font-roboto-mono text-13 space-x-1">
+    <div className="fixed top-0 right-0 z-200">
+      <div className="pt-5 pr-5 md:pt-10 md:pr-10 font-roboto-mono text-13 space-x-1">
         <button 
         onClick={() => changeLanguage("es")} 
         className="cursor-pointer hover:font-bold transition-all duration-300 ease-in-out">
