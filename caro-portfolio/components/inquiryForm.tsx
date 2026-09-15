@@ -48,7 +48,7 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col text-13">
+    <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" className="flex flex-col text-13">
       <div>
         <input type="hidden" {...register("pieceTitle")} />
 
@@ -59,8 +59,6 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
           <input
             type="text"
             id="client-name"
-            placeholder="john doe"
-            autoComplete="name"
             {...register("clientName")}
             className="h-8 p-2 bg-[#CDC6B0] rounded-xs"
             aria-invalid={!!errors.clientName}
@@ -79,8 +77,7 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
           <input
             id="email"
             type="email"
-            autoComplete="email"
-            placeholder="ejemplo@mail.com"
+            
             {...register("email")}
             className="h-8 p-2 bg-[#CDC6B0]"
             aria-invalid={!!errors.email}
@@ -98,7 +95,6 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
           <textarea
             id="message"
             rows={4}
-            placeholder={`Me interesa saber mas detalles de la pieza ${pieceTitle}`}
             {...register("message")}
             className="h-16 p-2 bg-[#CDC6B0] text-wrap"
             aria-invalid={!!errors.message}
