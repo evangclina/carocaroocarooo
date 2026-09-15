@@ -1,0 +1,25 @@
+{
+  "Navbar": {
+    "contact": "contacto"
+  },
+  "Buttons": {
+    "inquiry": "consultar",
+    "sold": "vendido"
+  },
+  "Modal":{
+    "name": "nombre",
+    "message": "mensaje",
+    "send": "enviar",
+    "sending": "enviando",
+    "success": "correo enviado", 
+    "error": "algo salió mal"
+  },
+  "Piece": {
+    "dimensions": "dimensiones"
+  }, 
+  "Info": {
+    "p1": "Carolina Vega es diseñadora de producto & artista. Su trabajo se expresa a través de la arcilla, la porcelana y el metal, dando vida a piezas que nacen tanto de su imaginario y de su mundo consciente. Su obra refleja vivencias, emociones y sueños, traducidos en formas, texturas y materialidades.",
+    "p2": "Su proceso creativo es experimental. Desde su pequeño estudio en Guadalajara, explora el uso de cenizas, metales preciosos como la  plata, conchas, piedras y plantas para desarrollar acabados únicos en sus esmaltes. En 2025 cursó formulación de esmaltes en Casa Ceniza, Guadalajara, México.",
+    "p3": "Como diseñadora de producto, mobiliario e interiores, colabora con Huber Design Studio, donde actualmente lidera la línea de objetos en colaboración con artesanos de la región. Guadalajara, México, 2026."
+  }
+}

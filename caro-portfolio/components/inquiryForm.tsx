@@ -9,6 +9,7 @@ import {
 } from "@/lib/validations/inquirySchema";
 
 import { sendEmail } from "@/lib/sendInquiry";
+import { useTranslations } from "next-intl";
 
 type Props = {
   pieceTitle: string;
@@ -16,6 +17,7 @@ type Props = {
 };
 
 export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
+  const t = useTranslations("Modal")
   const {
     register,
     handleSubmit,
@@ -35,10 +37,10 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
     try {
       await sendEmail(data);
       reset();
-      toast.success("email sent", { position: "top-center" });
+      toast.success(t("success"), { position: "top-center" });
       onSuccess();
     } catch {
-      toast.error("something went wrong", { position: "top-center" });
+      toast.error(t("error"), { position: "top-center" });
     }
   };
 
@@ -49,7 +51,7 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
 
         <div className="flex flex-col mb-2.5">
           <label htmlFor="client-name" className="mb-1.5">
-            nombre
+            {t("name")}
           </label>
           <input
             type="text"
@@ -88,7 +90,7 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
 
         <div className="flex flex-col mb-2.5">
           <label htmlFor="message" className="mb-1.5">
-            mensaje
+            {t("message")}
           </label>
           <textarea
             id="message"
@@ -118,7 +120,7 @@ export default function InquiryForm({ pieceTitle, onSuccess }: Props) {
         "
         aria-label="send email for inquiry"
       >
-        {isSubmitting ? "enviando" : "enviar"}
+        {isSubmitting ? t("sending") : t("send")}
       </button>
     </form>
   );
