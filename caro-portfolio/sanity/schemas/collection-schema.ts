@@ -159,7 +159,12 @@ const collection = {
         },
       ],
     },
-  ],
+  ], 
+  preview: {
+    select: {
+      title: "name.es",
+    },
+  },
 };
 
 export default collection;

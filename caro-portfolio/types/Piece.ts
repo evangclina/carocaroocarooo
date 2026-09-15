@@ -6,10 +6,6 @@ export type Dimensions = {
   width: number;
   height: number;
 };
-export type EnglishSpanish = {
-  es: string, 
-  en: string
-}
 
 export type Piece = {
   name: string;

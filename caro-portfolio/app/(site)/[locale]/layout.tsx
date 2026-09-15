@@ -22,8 +22,8 @@ export default async function RootLayout({
 
   return (
     <>
-    <NextIntlClientProvider messages={messages}>
-    <div className={`bg-[#F1EEE6] font-roboto-mono`}>
+    <NextIntlClientProvider messages={messages} locale={locale}>
+      <div className={`bg-[#F1EEE6] font-roboto-mono`}>
         <header className="md:h-screen md:fixed md:top-0 md:left-0">
           <Nav />
         </header>

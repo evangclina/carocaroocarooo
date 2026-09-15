@@ -6,24 +6,27 @@ export async function getCollections(): Promise<Collection[]> {
     groq`*[_type == "collection"]{
       _id, 
       _createdAt,
-      name, 
+      "name": name.es,
       "slug": slug.current,
       pieces
     }`,
   );
 }
+type Locale = "es" | "en";
 
-export async function getCollectionBySlug(slug: string): Promise<Collection> {
+export async function getCollectionBySlug(slug: string, locale: Locale): Promise<Collection> {
+
   const collection = await client.fetch(
     `*[_type == "collection" && slug.current == $slug][0]{
       _id,
       _createdAt,
-      name,
+      "name": name[$locale],
       "slug": slug.current,
-      "image": image.asset->url,
-      description,
       pieces[]{
-        name, 
+        "name": select(
+          $locale == "en" => name.en,
+          name.es
+        ),
         slug, 
         images[]{
           _id, 
@@ -32,14 +35,20 @@ export async function getCollectionBySlug(slug: string): Promise<Collection> {
           "height": asset->metadata.dimensions.height
         },
         status, 
-        description, 
-        material, 
+        "description": select(
+          $locale == "en" => description.en,
+          description.es
+        ), 
+        "material": select(
+          $locale == "en" => material.en, 
+          material.es
+        ), 
         dimensions
       }
     }`,
-    { slug },
+    { slug, locale },
   );
-
+  
   return collection;
 }
 

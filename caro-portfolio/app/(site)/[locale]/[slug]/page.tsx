@@ -2,16 +2,19 @@ import PhotoCarousel from "@/components/Carousel/photoCarousel";
 import InquiryModal from "@/components/inquiryModal";
 import { getCollectionBySlug } from "@/sanity/sanity-utils";
 import { getTranslations } from "next-intl/server";
+import { getLocale } from "next-intl/server";
+
+type Locale = "es" | "en";
 
 export default async function CollectionPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string, locale: Locale }>;
 }) {
-  const { slug } = await params;
   const t = await getTranslations("Piece")
 
-  const collection = await getCollectionBySlug(slug);
+  const { slug, locale } = await params;
+  const collection = await getCollectionBySlug(slug, locale);
 
   return (
     <div>
